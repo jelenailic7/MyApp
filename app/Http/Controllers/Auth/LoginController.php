@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,4 +37,37 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function create() 
+    {
+        // dd('create');
+        // \Log::info('create route'); 
+        return view('login.create');
+    }
+
+    public function store()
+    {
+        \Log::info('storeroute'); 
+       if(!auth()->attempt(request(['email','password'])))
+       {
+           return back()->withErrors([
+               'message'=>'Bad credentials.Please try again'
+           ]);
+
+       }
+ 
+      $user = User::where('email', request('email')); 
+      auth()->login($user);
+       return redirect('/');
+    }
+
+
+    public function destroy()
+    {  
+        dd('destroy');
+        \Log::info('destroy');   
+       auth()->logout();
+       return redirect('/login');
+    }
 }
+

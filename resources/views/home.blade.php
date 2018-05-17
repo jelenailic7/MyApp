@@ -65,21 +65,22 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+
+
+          
+                    @if (Auth::check())
+                        <a class="nav-link ml-auto" href="{{ route('logout') }}">Logout</a>
+                        @endif
+                        @if(!Auth::check())
+                        <a class="nav-link ml-auto" href="/login">Login</a>
+                        <a class="nav-link ml-auto" href="/register">Register</a>
+                        @endif 
+
+           
 
             <div class="content">
                 <div class="title m-b-md">
-                sve je kul
+                ok
                 </div>
 
             </div>
