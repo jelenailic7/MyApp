@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function create()
+    {
+    $items = Subject::all(['id', 'name']);
+    return View::make('your view', compact('items',$items));
+    }
 }
