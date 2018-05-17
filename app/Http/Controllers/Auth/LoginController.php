@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -39,5 +40,23 @@ class LoginController extends Controller
     public function create() 
     {
         return view('login.create');
+    }
+
+    public function store()
+    {
+     
+       if(!auth()->attempt(request(['email','password'])))
+       {
+           return back()->withErrors([
+               'message'=>'Bad credentials.Please try again'
+           ]);
+       }
+       return redirect('/');
+ 
+       $user = User::find($id);
+       $user->save();
+       auth()->login($user);
+       return redirect('/home');
+
     }
 }

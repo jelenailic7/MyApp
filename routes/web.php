@@ -14,5 +14,5 @@
 Route::get('/home', 'HomeController@index'); 
 
 Route::get('/', 'Auth\LoginController@create');
-Route::post('login','LoginController@store');
-Route::get('logout','LoginController@destroy');
+Route::post('login','Auth\LoginController@store');
+Route::get('logout','Auth\LoginController@destroy');
