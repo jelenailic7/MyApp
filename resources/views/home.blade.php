@@ -66,15 +66,8 @@
     </head>
     <body>
 
+    @include('partial.header')
 
-          
-                    @if (Auth::check())
-                        <a class="nav-link ml-auto" href="{{ route('logout') }}">Logout</a>
-                        @endif
-                        @if(!Auth::check())
-                        <a class="nav-link ml-auto" href="/login">Login</a>
-                        <a class="nav-link ml-auto" href="/register">Register</a>
-                        @endif 
 
            
 

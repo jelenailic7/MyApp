@@ -1,4 +1,5 @@
 
+    @include('partial.header')
 
     <h2 class="blog-post-title">Register</h2>
 
