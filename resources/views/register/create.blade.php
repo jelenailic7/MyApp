@@ -7,7 +7,7 @@
     {{ csrf_field() }}
     
     <div class="form-group">
-    <label for="first_name">First name/label>
+    <label for="first_name">First name</label>
     <input type="text" class="form-control" id="first_name" name="first_name">
     </div>
 
@@ -25,14 +25,14 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password"></textarea>
     </div>
-
     <div class="form-group">
-        <label for="country">Country</label>
-        <input type="text" class="form-control" id="country" name="country"></textarea>
+        <label for="password_confirmation">Password</label>
+        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"></textarea>
     </div>
-    <div class="form-group">
 
-    <select class="form-control" name="item_id">
+
+    <div class="form-group">
+    <select class="form-control" id="country" name="country">
         @foreach($countries as $country)
         <option value="{{$country->name}}">{{$country->name}}</option>
         @endforeach

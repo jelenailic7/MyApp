@@ -38,10 +38,8 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function create() 
+    public function showLoginForm() 
     {
-        // dd('create');
-        // \Log::info('create route'); 
         return view('login.create');
     }
 

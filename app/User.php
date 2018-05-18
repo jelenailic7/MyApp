@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'company', 'country'
+        'first_name','last_name', 'email', 'password', 'company', 'country'
     ];
 
     /**
@@ -27,9 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function create()
-    {
-    $items = Subject::all(['id', 'name']);
-    return View::make('your view', compact('items',$items));
-    }
+    // public function create()
+    // {
+    // $items = Subject::all(['id', 'name']);
+    // return View::make('your view', compact('items',$items));
+    // }
 }
