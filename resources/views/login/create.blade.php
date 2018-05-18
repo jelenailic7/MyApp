@@ -1,5 +1,6 @@
+@extends('layout.master')
+@section('content')
 
-    @include('partial.header')
 
     <h2 class="blog-post-title">Login</h2>
 
@@ -33,4 +34,5 @@
 
             @endforeach
          @endif
+@endsection
 
