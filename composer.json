@@ -10,8 +10,7 @@
         "fzaninotto/faker": "^1.7",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
-        "monarobase/country-list": "^2.1",
-        "pragmarx/countries": "^0.5.8"
+        "webpatser/laravel-countries": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
@@ -54,7 +53,7 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
