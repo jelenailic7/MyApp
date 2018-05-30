@@ -10,6 +10,7 @@
         "fzaninotto/faker": "^1.7",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
+        "twbs/bootstrap": "4.1.1",
         "webpatser/laravel-countries": "dev-master"
     },
     "require-dev": {

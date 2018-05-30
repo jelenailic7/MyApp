@@ -27,9 +27,5 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    // public function create()
-    // {
-    // $items = Subject::all(['id', 'name']);
-    // return View::make('your view', compact('items',$items));
-    // }
+  
 }

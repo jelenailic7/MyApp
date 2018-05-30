@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class RegisterController extends Controller
@@ -81,7 +83,7 @@ class RegisterController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-       
+        // Hash::make($request->newPassword)
 
         $user = new User();
        return $user->create([
@@ -89,7 +91,7 @@ class RegisterController extends Controller
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
-            'password' => $data['password'],        
+            'password' => Hash::make($data['password']),        
             'company' => $data['company'],
             'country' => $data['country'],
         ]);
